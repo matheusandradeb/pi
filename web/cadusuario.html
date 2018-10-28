@@ -110,7 +110,44 @@
     #sidebar-wrapper {
         width: 250px;
     }
+#sidebar-wrapper .sidebar-nav li a .caret {
+  position: absolute;
+  right: 23px;
+  top: auto;
+  margin-top: 20px;
+}
 
+#sidebar-wrapper .sidebar-nav li ul.panel-collapse {
+    list-style: none;
+    -moz-padding-start: 0;
+    -webkit-padding-start: 0;
+    -khtml-padding-start: 0;
+    -o-padding-start: 0;
+    padding-start: 0;
+    padding: 0;
+}
+
+#sidebar-wrapper .sidebar-nav li ul.panel-collapse li i {
+    margin-right: 10px;
+}
+
+#sidebar-wrapper .sidebar-nav li ul.panel-collapse li {
+    text-indent: 15px;
+}
+
+@media (max-width: 992px) {
+    #wrapper #sidebar-wrapper {
+        width: 45px;
+    }
+    #wrapper #sidebar-wrapper #sidebar #sidemenu li ul {
+        position: fixed;
+        left: 45px;
+        margin-top: -45px;
+        z-index: 1000;
+        width: 200px;
+        height: 0;
+    }
+}
     #wrapper.toggled #sidebar-wrapper {
         width: 0;
     }
@@ -304,15 +341,38 @@
                     <a href="dashboard.html"><i class="fa fa-line-chart"></i> Relatórios</a>
                 </li>
                 <li>
-                    <a href="cadusuario.html"><i class="fa fa-users"></i> Cadastro de Usuários</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-headphones"></i> Cadastro de Instrumentos</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-futbol-o"></i> Cadastro de Materiais</a>
-                </li>
-                
+                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                            <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                            <span class="sidebar-title">Usuários</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul id="submenu-2" class="panel-collapse collapse panel-switch">
+                            <li><a href="cadusuario.html"><i class="fa fa-plus"></i> Cadastro de Usuário</a></li>
+                            <li><a href="#"><i class="fa fa-list"></i> Lista de Usuários</a></li>
+                        </ul>
+                    </li>
+                 <li>
+                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+                            <span class="sidebar-icon"><i class="fa fa-headphones"></i></span>
+                            <span class="sidebar-title">Instrumentos</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul id="submenu-3" class="panel-collapse collapse panel-switch">
+                            <li><a href="#"><i class="fa fa-plus"></i> Cadastro de Instrumento</a></li>
+                            <li><a href="#"><i class="fa fa-list"></i> Lista de Instrumentos</a></li>
+                        </ul>
+                    </li>
+                 <li>
+                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-4">
+                            <span class="sidebar-icon"><i class="fa fa-futbol-o"></i></span>
+                            <span class="sidebar-title">Materiais</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul id="submenu-4" class="panel-collapse collapse panel-switch">
+                            <li><a href="#"><i class="fa fa-plus"></i> Cadastro de Materiais</a></li>
+                            <li><a href="#"><i class="fa fa-list"></i> Lista de Materiais</a></li>
+                        </ul>
+                    </li>
                 
                
             </ul>
@@ -330,26 +390,45 @@
 			<hr class="colorgraph">
                         
             <div class="form-group">
-    			<input type="text" name="nome" id="nome" class="form-control input-lg" placeholder="Nome Completo" tabindex="3">
-                        <br><input type="text" name="nome" id="nome" class="form-control input-lg" placeholder="Nome do Responsável" tabindex="3">    
+                        <label for="sel1">Nome Completo</label>  
+    			<input type="text" name="nome" id="nome" class="form-control input-lg"  tabindex="3">
+                        <label for="sel1">Nome do Responsável</label>  
+                        <br><input type="text" name="nome" id="nome" class="form-control input-lg"  tabindex="3">    
             </div>
 			
             
                         
 			<div class="form-group">
-				<input type="text" name="endereco" id="endereco" class="form-control input-lg" placeholder="Endereço" tabindex="3">
+                            <label for="sel1">Endereço</label>     
+				<input type="text" name="endereco" id="endereco" class="form-control input-lg"  tabindex="3">
 			</div>
 			
+                       
+   
+    
+      <div class="form-group">
+      <label for="sel1">Projeto Participante</label>
+      <select class="form-control" id="sel1">
+        <option>Futebol</option>
+        <option>Filarmônica</option>
+        <option>Flauta</option>
+        <option>Capoeira</option>
+       </select>            
+       </div>
+      
+            
            <div class="row">
             	<div class="col-xs-6 col-sm-6 col-md-6">
 		<div class="form-group">
-                                            
+                         <label for="sel1">Data de Nascimento</label>                    
                         <input type="date" name="dn" id="dn" class="form-control input-lg" tabindex="1">
+                        <label for="sel1">Telefone</label>                    
+                        <input type="text" name="dn" id="dn" class="form-control input-lg" tabindex="1">
 			
                 </div>
                 </div>
 		</div>
-                        
+                                      
                         
                         <div class="form-group">  
                             <h2> <small>Entrega dos Documentos</small></h2>
@@ -369,22 +448,16 @@
            
 			<hr class="colorgraph">
 			<div class="row">
-				<div class="col-xs-6 col-md-6"><input type="submit" value="Confirmar" class="btn btn-success btn-block btn-lg" tabindex="7"></div>
+			<div class="col-xs-6 col-md-6"><input type="submit" value="Confirmar" class="btn btn-success btn-block btn-lg" tabindex="7"></div>
 			</div>
 	
     </div>
     </div>
     </div>
-    </div>           
+    </div> 
+         </div> 
     <!-- /.row -->
-   
-         
-       
 
-    
-   
-
-  
     <script>
     $(".menu-toggle").click(function(e) {
         e.preventDefault();
