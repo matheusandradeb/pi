@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <style>   
+       
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -28,7 +29,7 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #F2F2F2;
+    background: #e6e6e6;    
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -69,7 +70,8 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #4d4d4d;
+    font-weight: bold;
 }
 
 .sidebar-nav li a:hover {
@@ -347,8 +349,8 @@
                             <b class="caret"></b>
                         </a>
                         <ul id="submenu-2" class="panel-collapse collapse panel-switch">
-                            <li><a href="cadusuario.html"><i class="fa fa-plus"></i> Cadastro de Usuário</a></li>
-                            <li><a href="#"><i class="fa fa-list"></i> Lista de Usuários</a></li>
+                            <li><a href="cadusuario.html"><i class="fa fa-plus"></i> Cadastro</a></li>
+                            <li><a href="#"><i class="fa fa-list"></i> Lista</a></li>
                         </ul>
                     </li>
                  <li>
@@ -358,8 +360,9 @@
                             <b class="caret"></b>
                         </a>
                         <ul id="submenu-3" class="panel-collapse collapse panel-switch">
-                            <li><a href="cadinstrumentos.html"><i class="fa fa-plus"></i> Cadastro de Instrumento</a></li>
-                            <li><a href="#"><i class="fa fa-list"></i> Lista de Instrumentos</a></li>
+                            <li><a href="cadinstrumentos.html"><i class="fa fa-plus"></i> Cadastro</a></li>
+                            <li><a href="#"><i class="fa fa-list"></i> Lista</a></li>
+                             <li><a href="#"><i class="fa fa-percent"></i>Empréstimo</a></li>
                         </ul>
                     </li>
                  <li>
@@ -369,8 +372,8 @@
                             <b class="caret"></b>
                         </a>
                         <ul id="submenu-4" class="panel-collapse collapse panel-switch">
-                            <li><a href="#"><i class="fa fa-plus"></i> Cadastro de Materiais</a></li>
-                            <li><a href="#"><i class="fa fa-list"></i> Lista de Materiais</a></li>
+                            <li><a href="cadastromaterial.html"><i class="fa fa-plus"></i> Cadastro</a></li>
+                            <li><a href="#"><i class="fa fa-list"></i> Lista</a></li>
                         </ul>
                     </li>
                 
@@ -390,16 +393,16 @@
 			<hr class="colorgraph">
                         
             <div class="form-group">
-                        <label for="sel1">Nome Completo</label>  
+                        <label for="sel1">Nome Completo:</label>  
     			<input type="text" name="nome" id="nome" class="form-control input-lg"  tabindex="3">
-                        <label for="sel1">Nome do Responsável</label>  
+                        <label for="sel1">Nome do Responsável:</label>  
                         <br><input type="text" name="nome" id="nome" class="form-control input-lg"  tabindex="3">    
             </div>
 			
             
                         
 			<div class="form-group">
-                            <label for="sel1">Endereço</label>     
+                            <label for="sel1">Endereço:</label>     
 				<input type="text" name="endereco" id="endereco" class="form-control input-lg"  tabindex="3">
 			</div>
 			
@@ -407,7 +410,7 @@
    
     
       <div class="form-group">
-      <label for="sel1">Projeto Participante</label>
+      <label for="sel1">Projeto Participante:</label>
       <select class="form-control" id="sel1">
         <option>Futebol</option>
         <option>Filarmônica</option>
@@ -420,9 +423,9 @@
            <div class="row">
             	<div class="col-xs-6 col-sm-6 col-md-6">
 		<div class="form-group">
-                         <label for="sel1">Data de Nascimento</label>                    
+                         <label for="sel1">Data de Nascimento:</label>                    
                         <input type="date" name="dn" id="dn" class="form-control input-lg" tabindex="1">
-                        <label for="sel1">Telefone</label>                    
+                        <label for="sel1">Telefone:</label>                    
                         <input type="text" name="dn" id="dn" class="form-control input-lg" tabindex="1">
 			
                 </div>
@@ -431,7 +434,7 @@
                                       
                         
                         <div class="form-group">  
-                            <h2> <small>Entrega dos Documentos</small></h2>
+                            <h2> <small>Entrega dos Documentos:</small></h2>
                             <hr class="colorgraph">
 <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" >
