@@ -7,419 +7,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <style>   
-       
-       
-#wrapper {
-    padding-left: 0;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled {
-    padding-left: 250px;
-}
-
-#sidebar-wrapper {
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #e6e6e6;    
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-}
-
-#wrapper.toggled #sidebar-wrapper {
-    width: 250px;
-}
-
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 15px;
-}
-
-#wrapper.toggled #page-content-wrapper {
-    position: absolute;
-    margin-right: -250px;
-}
-
-/* Sidebar Styles */
-
-.sidebar-nav {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar-nav li {
-    text-indent: 20px;
-    line-height: 40px;
-}
-
-.sidebar-nav li a {
-    display: block;
-    text-decoration: none;
-    color: #4d4d4d;
-    font-weight: bold;
-}
-
-.sidebar-nav li a:hover {
-    text-decoration: none;
-    color: #fff;
-    background: #19aa8d;
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-    text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-    height: 65px;
-    font-size: 18px;
-    line-height: 60px;
-}
-
-.sidebar-nav > .sidebar-brand a {
-    color: #19aa8d  ;
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-    color: #fff;
-    background: none;
-}
-
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 250px;
-    }
-
-    #wrapper.toggled {
-        padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-        width: 250px;
-    }
-#sidebar-wrapper .sidebar-nav li a .caret {
-  position: absolute;
-  right: 23px;
-  top: auto;
-  margin-top: 20px;
-}
-
-#sidebar-wrapper .sidebar-nav li ul.panel-collapse {
-    list-style: none;
-    -moz-padding-start: 0;
-    -webkit-padding-start: 0;
-    -khtml-padding-start: 0;
-    -o-padding-start: 0;
-    padding-start: 0;
-    padding: 0;
-}
-
-#sidebar-wrapper .sidebar-nav li ul.panel-collapse li i {
-    margin-right: 10px;
-}
-
-#sidebar-wrapper .sidebar-nav li ul.panel-collapse li {
-    text-indent: 15px;
-}
-
-@media (max-width: 992px) {
-    #wrapper #sidebar-wrapper {
-        width: 45px;
-    }
-    #wrapper #sidebar-wrapper #sidebar #sidemenu li ul {
-        position: fixed;
-        left: 45px;
-        margin-top: -45px;
-        z-index: 1000;
-        width: 200px;
-        height: 0;
-    }
-}
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
-}
-
-
-
-        
-    </style>
-    <title>DashBoard - Aprendizado</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <link href="sidebar.css" rel="stylesheet">
+  
     
-    <style media="screen">
-     
-      #connectLogo {
-        height: 60px;
-        padding: 15px 0 5px 0;
-      }
-     
-
-      .share-link {
-        line-height: 60px;
-        padding: 0 1em;
-        font-size: 2em;
-      }
-      
-      body{
-		font-family: 'Open Sans', sans-serif;
-	}
-	.form-control {
-		
-	}
-	.form-control:focus {
-		
-	}
-	.navbar-header.col {
-		padding: 0 !important;
-	}	
-	.navbar {
-		background: #fff;
-		padding-left: 16px;
-		padding-right: 16px;
-		border-bottom: 1px solid #dfe3e8;
-		border-radius: 0;
-	}
-	.navbar .navbar-brand {
-		font-size: 20px;
-		padding-left: 0;
-		padding-right: 50px;
-	}
-	.navbar .navbar-brand b {
-		font-weight: bold;
-		color: #29c68c;		
-	}
-	.navbar ul.nav li a {
-		color: #999;
-	}
-	.navbar ul.nav li a:hover, .navbar ul.nav li a:focus {
-		color: #29c68c !important;
-	}
-	.navbar ul.nav li.active > a, .navbar ul.nav li.open > a {
-		color: #26bb84 !important;
-		background: transparent !important;
-	}
-    .navbar .form-inline .input-group-addon {
-		box-shadow: none;
-        border-radius: 2px 0 0 2px;
-		background: #f5f5f5;
-        border-color: #dfe3e8;
-        font-size: 16px;
-    }
-	.navbar .form-inline i {
-		font-size: 16px;
-	}
-	.navbar .form-inline .btn {
-		border-radius: 2px;
-		color: #fff;
-        border-color: #29c68c;
-		background: #29c68c;
-		outline: none;
-	}
-	.navbar .form-inline .btn:hover, .navbar .form-inline .btn:focus {
-        border-color: #26bb84;
-		background: #26bb84;
-    }
-	.navbar .search-form {
-		display: inline-block;
-	}
-	.navbar .search-form .btn {
-		margin-left: 4px;
-	}
-	.navbar .search-form .form-control {
-		border-radius: 2px;
-	}
-	.navbar .login-form .input-group {
-		margin-right: 4px;
-		float: left;
-	}
-	.navbar .login-form .form-control {
-		max-width: 158px;
-		border-radius: 0 2px 2px 0;
-	}    	
-	.navbar .navbar-right .dropdown-toggle::after {
-		display: none;
-	}
-	.navbar .dropdown-menu {
-		border-radius: 1px;
-		border-color: #e5e5e5;
-		box-shadow: 0 2px 8px rgba(0,0,0,.05);
-	}
-	.navbar .dropdown-menu li a {
-		padding: 6px 20px;
-	}
-	.navbar .navbar-right .dropdown-menu {
-		width: 5px;
-		padding: 5px;
-		left: auto;
-		right: 0;
-        font-size: 14px;
-	}
-
-		
-		.navbar .input-group {
-			width: 100%;
-			margin-bottom: 15px;
-		}
-		.navbar .input-group .form-control {
-			max-width: none;			
-		}
-		.navbar .login-form .btn {
-			width: 100%;
-		}
-	
-    </style>
+    <title>DashBoard - Aprendizado</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/navbar.css"  rel="stylesheet">
+   
 
 </head>
-
 <body>
-
+    <!-- Inicio NavBar -->
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        
-          
-          <div class="navbar-header">
+    <div class="container-fluid">
+    <div class="navbar-header">
            <a class="navbar-brand" href="#">Aprendi<b>zado</b></a>  		
         </div>
 
-         <ul class="nav navbar-nav navbar-right ml-auto">
+                        <ul class="nav navbar-nav navbar-right ml-auto">
 			<li class="nav-item dropdown">
-						<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><i class="fa fa-user-o"></i> Matheus <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-          <li><a href="index.html"><i class="fa fa-power-off"></i> Sair</a></li>
-         
-        </ul>
-          
-          
-          
-          
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   
-    </nav>
+			<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><i class="fa fa-user-o"></i> Usuário <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        <li><a href="index.html"><i class="fa fa-power-off"></i> Sair</a></li>
+                        </ul>
+   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   </nav>
+      <!-- Fim do NavBar -->
+    
+   <div id="wrapper">
 
-    <div id="wrapper">
-
-        <!-- Sidebar -->
+        <!-- Sidebar  -->
         <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    
-                </li>
-                <li>
-                    <a href="dashboard.html"><i class="fa fa-line-chart"></i> Relatórios</a>
-                </li>
-                <li>
-                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
-                            <span class="sidebar-icon"><i class="fa fa-users"></i></span>
-                            <span class="sidebar-title">Usuários</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul id="submenu-2" class="panel-collapse collapse panel-switch">
-                            <li><a href="cadusuario.html"><i class="fa fa-plus"></i> Cadastro</a></li>
-                            <li><a href="listacadastro.html"><i class="fa fa-list"></i> Lista</a></li>
-                        </ul>
-                    </li>
-                 <li>
-                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
-                            <span class="sidebar-icon"><i class="fa fa-drum"></i></span>
-                            <span class="sidebar-title">Instrumentos</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul id="submenu-3" class="panel-collapse collapse panel-switch">
-                            <li><a href="cadinstrumentos.html"><i class="fa fa-plus"></i> Cadastro</a></li>
-                            <li><a href="listainstrumento.html"><i class="fa fa-list"></i> Lista</a></li>
-                            <li><a href="#"><i class="fa fa-percent"></i>Empréstimo</a></li>
-                        </ul>
-                    </li>
-                 <li>
-                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-4">
-                            <span class="sidebar-icon"><i class="fa fa-futbol-o"></i></span>
-                            <span class="sidebar-title">Materiais</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul id="submenu-4" class="panel-collapse collapse panel-switch">
-                            <li><a href="cadmaterial.html"><i class="fa fa-plus"></i> Cadastro</a></li>
-                            <li><a href="listamateriais.html"><i class="fa fa-list"></i> Lista</a></li>
-                        </ul>
-                    </li>
-                
-               
+          <ul class="sidebar-nav">
+          <li class="sidebar-brand">
+          </li>
+          <li>
+           <a href="dashboard.html"><i class="fa fa-line-chart"></i> Relatórios</a>
+          </li>
+          <li>
+           <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+           <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+           <span class="sidebar-title">Usuários</span>
+           <b class="caret"></b>
+           </a>
+          <ul id="submenu-2" class="panel-collapse collapse panel-switch">
+           <li><a href="cadusuario.html"><i class="fa fa-plus"></i> Cadastro</a></li>
+           <li><a href="listacadastro.html"><i class="fa fa-list"></i> Lista</a></li>
+          </ul>
+          </li>
+          <li>
+           <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+           <span class="sidebar-icon"><i class="fa fa-headphones"></i></span>
+           <span class="sidebar-title">Instrumentos</span>
+           <b class="caret"></b>
+           </a>
+          <ul id="submenu-3" class="panel-collapse collapse panel-switch">
+           <li><a href="cadinstrumentos.html"><i class="fa fa-file"></i> Controle</a></li>
+           <li><a href="listainstrumento.html"><i class="fa fa-list"></i> Lista</a></li>
+           <li><a href="empinstrumento.html"><i class="fa fa-percent"></i>Empréstimo</a></li>
+          </ul>
+          </li>
+          <li>
+            <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-4">
+            <span class="sidebar-icon"><i class="fa fa-futbol-o"></i></span>
+            <span class="sidebar-title">Materiais</span>
+            <b class="caret"></b>
+            </a>
+            <ul id="submenu-4" class="panel-collapse collapse panel-switch">
+            <li><a href="cadmaterial.html"><i class="fa fa-file"></i> Controle</a></li>
+            <li><a href="listamateriais.html"><i class="fa fa-list"></i> Lista</a></li>
             </ul>
-            
-            
+          </li>  
+          </ul>  
         </div>
-        <br>
-        <br>
-        <br>
         
-   
+         <!-- Fim do Sidebar  -->  
          
          
-        <div id="page-content-wrapper">
-   <div class="container-fluid">
-                <div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-3 col-sm-offset-1 col-md-offset-4">
-		
-             <h2> <small>Cadastro de Instrumentos</small></h2>
-         <hr class="colorgraph">
+        <br>
+        <br>
+        <br>
+      <!-- Form Cadastro -->  
+           <div id="page-content-wrapper">
+            <div class="container-fluid">
+             <div class="row">
+              <div class="col-xs-12 col-sm-8 col-md-3 col-sm-offset-1 col-md-offset-4">
+	       <h2> <small>Controle dos Instrumentos</small></h2>
+                <hr class="colorgraph">
 			
-                        
-            <div class="form-group">
-                        <label for="sel1">Nome do Instrumento:</label>  
-    			<input type="text" name="nome" id="nome" class="form-control input-lg"  tabindex="3">  
-            </div>
-			
+                 <!-- Select -->         
+                <div class="form-group">
+                  <label for="sel1">Instrumentos:</label>
+                   <select class="form-control" id="sel1">
+                     <option>Trompete</option>
+                     <option>Flauta</option>
+                     <option>Saxofone</option>
+                   </select>            
+                </div>
+                   <!-- Fim do Select --> 
+                                     
+                                 <!-- Botão Modal -->
+			  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                          <i class="fa fa-plus"></i> Novo Instrumento
+                          </button>
+                                 <!-- Fim do Botão Modal -->
+                                 
+                                 
+                <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                 <div class="modal-header">
+                   <h5 class="modal-title" id="exampleModalLabel">Inserir Instrumento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                 </div>
+                   <div class="modal-body">
+
+                    <div class="form-group">
+                     <div class="col-3">
+                      <label for="sel1">Nome do Instrumento:</label>  
+                      <input type="text" name="nome"  id="nome" size="23" class="form-control input-lg"  tabindex="3">        
+                     </div>
+                    </div>       
+
+                   </div>
+                    <div class="modal-footer">
+                    <input type="submit" value="Salvar" class="btn btn-success " tabindex="2">
+                    </div>
+                </div>
+                 </div>
+                  </div> 
+                    <!-- Fim do Modal -->
+
+                     <br><br>
+                      <div class="form-group">
+                        <div class="col-3">
+                             <label for="sel1">Quantidade:</label>  
+                             <input type="number" name="nome"  id="nome" size="23" class="form-control input-lg"  tabindex="3">        
+                        </div>
+                      </div>   
                      
-          <div class="form-group">
-               <div class="col-3">
-                        <label for="sel1">Quantidade:</label>  
-    			<input type="number" name="nome"  id="nome" size="23" class="form-control input-lg"  tabindex="3">        
-          </div>
-           </div>   
-              
 			<hr class="colorgraph">
 			<div class="row">
-			<div class="col-xs-6 col-md-6"><input type="submit" value="Confirmar" class="btn btn-success btn-block btn-md" tabindex="7"></div>
+			 <div class="col-xs-6 col-md-6"><input type="submit" value="Confirmar" class="btn btn-success btn-block btn-md" tabindex="7"></div>
 			</div>
 	
-    </div>
-    </div>
-    </div>
-    </div> 
-         </div> 
-    <!-- /.row -->
+            </div>
+            </div>
+            </div>
+            </div> 
+      <!-- Fim do form Cadastro -->  
+ </div> 
+    <!-- fim div row -->
 
     <script>
     $(".menu-toggle").click(function(e) {
