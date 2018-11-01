@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>DashBoard - Aprendizado</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/navbar.css"  rel="stylesheet">
+
+</head>
+
+<body>
+
+    
+<!-- Inicio NavBar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+     
+         <div class="navbar-header">
+           <a class="navbar-brand" href="#">Aprendi<b>zado</b></a>  		
+         </div>
+
+         <ul class="nav navbar-nav navbar-right ml-auto">
+	 <li class="nav-item dropdown">
+	    <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"><i class="fa fa-user-o"></i> Usuário <span class="caret"></span></a>
+         <ul class="dropdown-menu">
+         <li><a href="index.html"><i class="fa fa-power-off"></i> Sair</a></li>
+         </ul>
+         
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   
+    </nav>
+<!-- Fim NavBar -->
+   
+
+
+    <div id="wrapper">
+
+        <!-- Inicio Sidebar -->
+        <div id="sidebar-wrapper">
+         <ul class="sidebar-nav">
+         <li class="sidebar-brand">
+         </li>
+                <li>
+                <a href="dashboard.html"><i class="fa fa-line-chart"></i> Relatórios</a>
+                </li>
+                 <li>
+                 <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                  <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                  <span class="sidebar-title">Usuários</span>
+                  <b class="caret"></b>
+                 </a>
+                    <ul id="submenu-2" class="panel-collapse collapse panel-switch">
+                     <li><a href="cadusuario.html"><i class="fa fa-plus"></i> Cadastro</a></li>
+                     <li><a href="listacadastro.html"><i class="fa fa-list"></i> Lista</a></li>
+                    </ul>
+                 </li>
+                       <li>
+                         <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+                          <span class="sidebar-icon"><i class="fa fa-headphones"></i></span>
+                          <span class="sidebar-title">Instrumentos</span>
+                          <b class="caret"></b>
+                         </a>
+                        <ul id="submenu-3" class="panel-collapse collapse panel-switch">
+                         <li><a href="cadinstrumentos.html"><i class="fa fa-file"></i> Controle</a></li>
+                         <li><a href="listainstrumento.html"><i class="fa fa-list"></i> Lista</a></li>
+                         <li><a href="empinstrumento.html"><i class="fa fa-percent"></i>Empréstimo</a></li>
+                        </ul>
+                       </li>
+                         <li>
+                        <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-4">
+                         <span class="sidebar-icon"><i class="fa fa-futbol-o"></i></span>
+                         <span class="sidebar-title">Materiais</span>
+                         <b class="caret"></b>
+                        </a>
+                        <ul id="submenu-4" class="panel-collapse collapse panel-switch">
+                            <li><a href="cadmaterial.html"><i class="fa fa-file"></i> Controle</a></li>
+                            <li><a href="listamateriais.html"><i class="fa fa-list"></i> Lista</a></li>
+                        </ul>
+                    </li>
+                
+               
+         </ul>
+            
+            
+        </div>
+        <!-- Fim Sidebar -->
+        
+        <br>
+        <br>
+        <br>
+                           <!-- Inicio Form --> 
+        <div id="page-content-wrapper">
+         <div class="container-fluid">
+          <div class="row">
+           <div class="col-xs-12 col-sm-8 col-md-5 col-sm-offset-1 col-md-offset-4">
+             <h2> <small>Controle de Materiais</small></h2>
+             <hr class="colorgraph">
+			
+            <!-- Select -->            
+        <div class="form-group">
+              <label for="sel1">Nome do Aluno:</label>
+              <select class="form-control" id="sel1">
+               <option>Aluno1</option>
+               <option>Aluno2</option>
+               <option>Aluno3</option>
+              </select>            
+        </div>
+            <!-- Fim do Select -->   
+
+            
+           <div class="form-group">
+              <label for="sel1">Instrumento:</label>
+              <select class="form-control" id="sel1">
+               <option>Instrumento1</option>
+               <option>Instrumento2</option>
+               <option>Instrumento3</option>
+              </select>            
+        </div>   
+               <hr class="colorgraph">
+	    <div class="row">
+	      <div class="col-xs-6 col-md-6"><input type="submit" value="Confirmar" class="btn btn-success btn-block btn-md" tabindex="7"></div>
+	    </div>
+	
+               
+               
+               
+    </div>
+    </div>
+    </div>
+    </div> 
+                           <!-- Fim Form --> 
+                           
+         </div> 
+    <!-- /.row -->
+
+    <script>
+    $(".menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
+
